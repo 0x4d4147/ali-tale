@@ -6,7 +6,6 @@
 
 	"Ali" says
 	+ Zzzzzzz...
-	+ Hi there
 
 	"alarmClock_sound" music
 

@@ -8,13 +8,7 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, ISelectHandle
 {
     public MainMenuPanelManager panelManager;
 
-    GameObject checkmark;
-
-    void Awake()
-    {
-        checkmark = transform.GetChild(0).gameObject;
-        checkmark.SetActive(false);
-    }
+    public HoverableImageButton hoverable;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -24,10 +18,5 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, ISelectHandle
     public void OnSelect(BaseEventData eventData)
     {
         panelManager.OnFocusEnteredButton(this);
-    }
-
-    public void SetCheckmarkEnabled(bool b)
-    {
-        checkmark.SetActive(b);
     }
 }

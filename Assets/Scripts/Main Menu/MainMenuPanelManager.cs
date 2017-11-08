@@ -16,15 +16,15 @@ public class MainMenuPanelManager : MonoBehaviour
             eventSystem.SetSelectedGameObject(b.gameObject);
         }
         ClearCheckmarks();
-        b.SetCheckmarkEnabled(true);
         currentlyFocusedButton = b;
+        currentlyFocusedButton.hoverable.ShowHover();
     }
 
     public void ClearCheckmarks()
     {
         for (int i = 0; i < mainMenuButtons.Length; i++)
         {
-            mainMenuButtons[i].SetCheckmarkEnabled(false);
+            mainMenuButtons[i].hoverable.ShowNormal();
         }
     }
 

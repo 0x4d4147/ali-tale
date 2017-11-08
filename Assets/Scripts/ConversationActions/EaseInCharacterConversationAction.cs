@@ -12,9 +12,12 @@ public class EaseInCharacterConversationAction : ConversationAction
 	public CharacterManager.RootPosition rootPosition;
 	public string startPose;
 
+    // Dumb hacks.
+    public Vector3 leftOffset = new Vector3(200, 0, 0);
+    public Vector3 rightOffset = new Vector3(-200, 0, 0);
+
 	public override IEnumerator Execute()
 	{
-		CharacterManager.instance.LoadCharacter(rootPosition, characterName, startPose);
         CharacterPlacer placer = CharacterPlacer.instance;
         placer.AddCharacter(characterName, startPose);
 
@@ -36,9 +39,9 @@ public class EaseInCharacterConversationAction : ConversationAction
                 }
         }
 
-//        placer.SetCharacterImageEnabled(characterName);
+        placer.SetCharacterImageEnabled(characterName, true);
 
-        yield return placer.AnimateCharacterTo(characterName, ToCharacterPosition(rootPosition), "linear", new Vector3(0, 0, 0), 1f);
+        yield return placer.AnimateCharacterTo(characterName, ToCharacterPosition(rootPosition), "in-out", GetStandardOffset(rootPosition), 0.9f);
 	}
 
     public CharacterPlacer.CharacterPosition ToCharacterPosition(CharacterManager.RootPosition pos)
@@ -53,13 +56,27 @@ public class EaseInCharacterConversationAction : ConversationAction
                 {
                     return CharacterPlacer.CharacterPosition.Right;
                 }
-            case CharacterManager.RootPosition.Center:
+        }
+        // Bad default, but whatever.
+        return CharacterPlacer.CharacterPosition.Center;
+    }
+
+    // Dumb hack...
+    public Vector3 GetStandardOffset(CharacterManager.RootPosition pos)
+    {
+        switch (rootPosition)
+        {
+            case CharacterManager.RootPosition.Left:
                 {
-                    // TODO.
-                    break;
+                    return leftOffset;
+                }
+            case CharacterManager.RootPosition.Right:
+                {
+                    return rightOffset;
                 }
         }
-        return CharacterPlacer.CharacterPosition.Left;
+
+        return Vector3.zero;
     }
 
 	public void SetRootPosition(string position)

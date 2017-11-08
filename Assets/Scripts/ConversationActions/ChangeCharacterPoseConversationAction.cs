@@ -9,7 +9,7 @@ public class ChangeCharacterPoseConversationAction : ConversationAction
 
 	public override IEnumerator Execute()
 	{
-		CharacterManager.instance.LoadPoseForExistingCharacter(characterName, characterPose);
+        CharacterPlacer.instance.LoadPose(characterName, characterPose);
 		Debug.LogFormat("ChangeCharacterPoseConversationAction:: Attempted to load pose {0} for {1}.", characterPose, characterName);
 		yield break;
 	}

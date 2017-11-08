@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3289bb333a9315641a61803472b73ecf
-timeCreated: 1510034898
+guid: 51cc2f43e24908249aba957fe93105e9
+timeCreated: 1510121323
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -22,7 +22,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -32,7 +32,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
     wrapU: 1
     wrapV: 1
