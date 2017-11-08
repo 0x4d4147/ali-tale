@@ -1,0 +1,746 @@
+﻿# Introduction Scene
+
+"1" {
+
+	"alarm clock" background
+
+	"Ali" says
+	+ Zzzzzzz...
+	+ Hi there
+
+	"alarmClock_sound" music
+
+	"..." says
+	+ Wake up... it's time to get up for class.
+	+ You need to get ready to go!
+
+	go to "2"
+
+}
+
+
+"2" {
+
+	"neighborhood" background
+	"Bird_sound" music
+
+	"Ali" enters
+	+ pose "neutral"
+	+ position left
+
+	"Ali's Phone" says
+	+ You have a new text message from Keith.
+
+	"Keith's Text" says
+	+ Hey, do you mind walking with me to school?  Kinda spooked by Trevor... he kept sending me awful text messages last night.  I’m trying to ignore it, but I'm really freaked out.
+
+	"Ali's Text" says
+	+ OK, on my way!
+
+	go to "3"
+
+}
+
+
+"3" {
+
+	"neighborhood" background
+	"Bird_sound" music
+
+	"Keith" enters
+	+ pose "grateful"
+	+ position right
+
+	"Keith" says
+	+ Thanks for coming, Ali.  I’m scared Trevor might do something...
+
+	options
+	+ Say nothing => "6"
+	+ Say something comforting => "7"
+	+ Tell Keith to fight back => "8"
+
+}
+
+"6" {
+
+	"Ali" says
+	+ ...
+
+	"Keith" poses "neutral"
+
+	"Keith" says
+	+ Yeah... I wish I could just skip school and stay home...
+
+	options
+	+ Say something comforting => "7"
+	+ Tell Keith to fight back => "8"
+	+ Ask what Trevor has been saying => "26"
+
+}
+
+"26" {
+
+	"Ali" says
+	+ Trevor’s been bothering you for a while, what’s he doing now?
+
+	"Keith" says
+	+ Yeah he seems to have had it out for me from the first day of school.
+	+ I feel like someone’s been following me on my way back from school for the past few days.
+	+ I don’t know how he got my number, but he’s been texting me constantly about how much he hates me.  He told me I would be better off dropping out of school.
+
+	options
+	+ Say something comforting => "7"
+	+ Tell Keith to fight back => "8"
+
+}
+
+"7" {
+
+	"Ali" says
+	+ I’m sorry, Keith.  I’m here if you ever need anything.  I’ve got your back!
+
+	"Keith" says
+	+ Thanks, Ali.  I’m glad to have you as a friend.
+
+	go to "9"
+
+}
+
+"8" {
+
+	"Ali" says
+	+ Can’t you just fight back?  You can’t keep running forever.
+
+	"Keith" poses "upset"
+
+	"Keith" says
+	+ Easy for you to say!  I can’t seem to get away.  It’s constant, at school, online... it’s all I think about.  I’m afraid.
+
+	options
+	+ Say something comforting => "7"
+
+}
+
+"9" {
+
+	"Keith" poses "neutral"
+
+	"Keith" says
+	+ We should get going or we’ll be late, c’mon.
+
+	load scene "Scenes/Overworld/Trevor Part 1"
+
+}
+
+# End of introduction scene.
+# Keith follows the Ali character when walking.  Ali walks to the right with Keith following.
+# Trevor Chibi should be partially hiding behind bush.
+# Something to indicate we can interact with Trevor on overworld.
+# Start of next scene: Bullying
+
+# Bullying Scene
+
+"10" {
+
+	"neighborhood" background
+	"Ominous_song" music
+
+	"Keith" enters
+	+ pose "keith and ali"
+	+ position left
+
+	"Keith" says
+	+ Uh oh...
+
+	"Trevor" enters
+	+ pose "aggressive"
+	+ position right
+
+	"Trevor" says
+	+ Hey, look who it is! You stopped texting me back last night, did I hurt your feelings?
+	+ ...Oh hey, Ali. Couldn’t stand up to me alone, huh Keith?
+
+	"Keith" says
+	+ Oh, hey, Trevor...
+
+	options
+	+ Say Nothing => "11"
+	+ Support Keith => "12"
+
+}
+
+"11" {
+
+	"neighborhood" background
+
+	"Ali" says
+	+ ...
+
+	"Trevor" says
+	+ What do you want Ali?  My issue is with Keith.
+
+	"Ali" says
+	+ ...
+
+	"Trevor" says
+	+ ...
+	+ This is going nowhere fast.
+	+ I’ll see you around, Keith.
+
+	"Trevor" exits
+
+	go to "13"
+
+}
+
+"12" {
+
+	"neighborhood" background
+
+	"Ali" says
+	+ You should just leave Keith alone! What did he ever do to you?
+
+	"Trevor" says
+	+ That’s none of your business Ali. You don’t want to get on my bad side either.
+
+	"Ali" says
+	+ Yeah but... it is my business.  Keith is my friend.
+
+	"Trevor" says
+	+ Ok well... I’m getting bored here.  Keith, I’ll catch you later.
+
+	"Trevor" exits
+
+	go to "13"
+}
+
+"13" {
+
+	"neighborhood" background
+
+	"Keith" exits
+
+	"Ali" enters
+	+ position left
+	+ pose "neutral"
+
+	"Keith" enters
+	+ position right
+	+ pose "grateful"
+
+	"Keith" says
+	+ Thanks for your support, Ali.  That could have been a lot worse...
+	+ Oh!  My phone is ringing, my dad wants to check in on me.  I’ll catch up with you at school.
+
+	"Keith" exits
+
+	load scene "Scenes/Overworld/Meeting Sage"
+
+}
+
+# Trevor Chibi should be gone
+# Keith Chibi walks ahead to the right and "leaves" the scene
+# Ali is now able to move
+# Sage the Cat (Chibi) moves in from the left and waits for player to interact with them
+
+# Begin Sage the Cat Intro
+
+"14" {
+
+	"neighborhood" background
+	"Hypnotize_sound" music
+
+	"Ali" enters
+	+ pose "shocked"
+	+ position left
+
+	"Sage" enters
+	+ pose "cat"
+	+ position right
+
+	"Sage" says
+	+ Ali...
+	+ You handled that well.
+
+	"Ali" says
+	+ You’re... a cat... and you’re talking... to me...
+
+	"Sage" says
+	+ Is that not normal?  Hmm... I know plenty of cats that talk...
+	+ I’m impressed with how well you handled the situation between Keith and Trevor.
+	+ Keith needed an ally, and you were there for him.  
+	+ Do you know what I mean by "ally"?
+
+	options
+	+ No, what is an ally? => "27"
+	+ Yes! => "28"
+
+}
+
+"27" {
+
+	"Sage" says
+	+ An ally is someone who speaks out on behalf of someone else or takes actions that are supportive of someone else.
+	+ In this case, your friend Keith needed support and you provided it to him.  
+	+ When someone is hurting someone else, you can get involved and tell them to stop.  
+	+ There are lots of ways you can be an ally right here in City of Townsville.
+
+	go to "15"
+
+}
+
+"28" {
+
+	"Sage" says
+	+ Wonderful!  As you know, an ally is someone who speaks out on behalf of someone else or takes actions that are supportive of someone else.
+	+ You were a wonderful ally to Keith!
+	+ There are lots of ways to be an ally.  I think we’ll see that many people in this world need one.
+
+	go to "15"
+
+}
+
+"15" {
+
+	"neighborhood" background
+	"Hypnotize_sound" music
+
+	"Sage" says
+	+ Ali, the City of Townsville really needs an ally right now.  Someone who can truly make a difference in this town.  I believe that person is you.
+	+ Meow, I will grant you the power you need to make a difference as an ally to all.  Stand still, please.
+
+	# Is there a way we can do some sort of animation to indicate that Ali receives the power to read minds?
+
+	go to "17"
+
+}
+
+"17" {
+
+	"hypnotic/psychedelic" background
+	"Hypnotize_sound" music
+
+	"Ali" poses "uncomfortable"
+
+	"Sage" says
+	+ I have granted you the power to explore minds.  The headache will go away in a few minutes.
+	+ This will allow you to learn more about other characters’ motivations.
+	+ You can use this power to spread kindness and bring people together, uniting your time.
+	+ Also, I will always be available to help, if you need it.
+
+	load scene "Scenes/Overworld/Trevor Part 2"
+
+}
+
+# Ali is able to move
+# Trevor Chibi is set to the far right, waiting for Ali Chibi to interact
+
+# Second interaction with Trevor
+
+"18" {
+
+	"neighborhood" background
+	"TenselyOminous_song" music
+
+	"Ali" enters
+	+ pose "neutral"
+	+ position left
+
+	"Trevor" enters
+	+ pose "angry"
+	+ position right
+
+	"Trevor" says
+	+ What do you want?!
+
+	options
+	+ Say nothing => "19"
+	+ I just want to talk => "20"
+	+ Read Trevor’s mind => "21"
+	+ Ask Sage => "31"
+
+}
+
+"31" {
+
+	"Ali" says
+	+ (Whispers) Sage, what do I do?  He seems so mad.
+
+	"Sage" says
+	+ He doesn’t seem like he’ll talk.  Why not try out your new power?
+
+	"Trevor" says
+	+ What are you doing?  Are you talking to yourself?  Is something wrong with you?
+
+	options
+	+ Say nothing => "19"
+	+ I just want to talk => "20"
+	+ Read Trevor’s mind => "21"
+
+}
+
+"19" {
+
+	"neighborhood" background
+
+	"Ali" says
+	+ ...
+
+	"Trevor" says
+	+ Leave me alone.
+
+	options
+	+ I just want to talk => "20"
+	+ Read Trevor’s mind => "21"
+
+}
+
+"20" {
+
+	"neighborhood" background
+
+	"Trevor" says
+	+ I’m not interested in talking to you.  Leave me alone.
+
+	options
+	+ Read Trevor’s mind => "21"
+
+}
+
+"21" {
+
+	"neighborhood" background
+	"calmMorning_song" music
+
+	"Trevor" says
+	+ (Trevor’s thoughts) What if the only reason people act like they like me is because of my money?  Are they pretending to like me?  Would anyone even care if I wasn’t at school?
+	+ (Trevor’s thoughts) I can’t stand that Keith guy.  He has real friends.  People in his life that care about him.
+
+	options
+	+ Discuss Trevor’s friends => "22"
+
+}
+
+"22" {
+
+	"neighborhood" background
+
+	"Trevor" says
+	+ My friends?  What about my friends?  None of them are interested in hanging out with you.
+
+	options
+	+ Keep pressing => "23"
+
+}
+
+"23" {
+
+	"neighborhood" background
+
+	"Trevor" says
+	+ Alright, fine.  I don’t HAVE friends, is that what you want to hear?  I’m sick of seeing you and Keith and your friends always having a good time.
+
+	options
+	+ Is that why you hate Keith? => "24"
+
+}
+
+"24" {
+
+	"neighborhood" background
+
+	"Trevor" says
+	+ Something about Keith just irritates me, ok?
+
+	"Ali" says
+	+ ...
+
+	"Trevor" says
+	+ ... Fine.  I’m...  sorry I’ve been such a jerk.  The truth is I’m really lonely at school.
+
+	# "Trevor" poses "apologetic"
+	"Trevor" poses "neutral"
+
+	"Trevor" says
+	+ I don’t think anyone there really cares about me very much.
+	+ I don’t know how to make friends, and took it out on Keith.
+
+	options
+	+ I'll be your friend, if... => "25"
+
+}
+
+"25" {
+
+	"neighborhood" background
+
+	"Ali" says
+	+ I can be your friend, but only if you promise to stop being mean to people.
+
+	"Trevor" says
+	+ ...really?  I don’t deserve that.  
+	+ I’ll think about it.
+	+ Thanks for talking with me.
+	+ I’m... gonna go.
+
+	"Trevor" exits
+
+	"Ali" says
+	+ ...
+
+	"Sage" enters
+	+ position right
+	+ pose "cat"
+
+	"hypnotic/psychedelic" background
+	"Hypnotize_sound" music
+
+	"Sage" says
+	+ Well done, Ali!  You taught Trevor a valuable lesson, and proved a powerful ally for Keith.
+	+ It would have been easy to judge Trevor without getting to know the reason he was acting that way towards Keith.
+	+ Instead, you stood up for Keith and told Trevor to stop bullying him.
+	+ I doubt Keith is the only one that could use our help.
+	+ Do you think there are others in City of Townsville that we could help?
+
+	options
+	+ Yes => "29"
+	+ No => "30"
+
+}
+
+"29" {
+
+	"Sage" says
+	+ Right you are.  As you go through your day, let’s see how many people you can help.
+	+ I’ll be with you, you need just ask for help.
+
+	load scene "Scenes/Overworld/Mr. Smith Part 1"
+
+}
+
+"30" {
+
+	"Sage" says
+	+ Hmm... I think you’ll be saddened to see just how many people do need your help, Ali.
+	+ Come, let’s check on the town and see what we discover.
+
+	load scene "Scenes/Overworld/Mr. Smith Part 1"
+
+}
+
+#End Trevor Story Arc (for now)
+
+#Begin New Scenario Story Arc - (tbd, David? Latif?)
+
+# On overworld map, character walks past mainBoyCharacter and Mr. Smith standing at bus stop
+# sweat drop appears over mainBoyCharacter
+
+"40" {
+
+	"neighborhood" background
+	"Bird_sound" music
+
+	"James" enters
+	+ position left
+	+ pose "uncomfortable"
+
+	"Suspicious Man" enters
+	+ position right
+	+ pose "neutral"
+
+	"James" says
+	+ ...
+	+ ... ... ...
+
+	"Suspicious Man" says
+	+ *Heavy breathing* *Wheeeezzzzz*
+	+ *Looks around suspiciously*
+	+ *Stomach grumbles*
+
+	"James" exits
+	"Suspicious Man" exits
+
+	"Ali" enters
+	+ pose "neutral"
+	+ position left
+
+	"Sage" enters
+	+ pose "cat"
+	+ position right
+
+	"Ali" says
+	+ I think James might need some help.
+
+	"Sage" says
+	+ What do you mean?
+
+	"Ali" says
+	+ If you look closer, you’ll see that James appears very uncomfortable standing next to that older man.
+
+	go to "41"
+
+}
+
+
+"41" {
+
+	"Sage" says
+	+ Why do you think he's uncomfortable?
+
+	"Ali" says
+	+ The old man looks creepy, and mean.
+
+	"Sage" says
+	+ Perhaps it’s better to get to know him a bit before we make judgments about him.
+	+ Appearances can be misleading.
+	+ Why not use your power here and see how we can help?
+
+	go to "42"
+
+}
+
+"42" {
+
+	"Sage" exits
+
+	"Suspicious Man" enters
+	+ pose "neutral"
+	+ position right
+
+	options
+	+ Read the suspicious man’s mind => "43"
+
+}
+
+"43" {
+
+	"Mr. Smith" says
+	+ (Mr. Smith’s thoughts) I really need to get to work... when is this bus going to show up?
+	+ (Mr. Smith’s thoughts) I'm so hungry.  But, that homeless person needed my breakfast way more than I did.  I’ll have to pick something up when I get to the office.
+
+
+	"Suspicious Man" exits
+
+	"Mr. Smith" enters
+	+ pose "neutral"
+	+ position right
+
+	options
+	+ Read James’ mind => "44"
+
+}
+
+"44" {
+
+	"Mr. Smith" exits
+
+	"James" enters
+	+ pose "uncomfortable"
+	+ position right
+
+	"James" says
+	+ This guy is really creeping me out.  I’ve never seen him waiting for the bus before.
+	+ He keeps looking around.  I’ve got a bad vibe about him...
+	+ He’s murmuring to himself.  Ugh, I just want to get out of here.
+
+	options
+	+ Talk to Mr. Smith => "45"
+
+}
+
+"45" {
+
+	"James" exits
+
+	"Mr. Smith" enters
+	+ pose "neutral"
+	+ position right
+
+	"Ali" says
+	+ Hi there, how are you?
+
+	"Mr. Smith" says
+	+ Oh, hello.  It’s been a rough morning. At least the sky looks beautiful. Best to focus on the positive, right?
+
+	"Ali" says
+	+ Yea, that’s a great way of thinking. It has been really nice meeting you.
+
+	"Mr. Smith" exits
+
+	options
+	+ Talk to James => "46"
+
+}
+
+"46" {
+
+	"James" enters
+	+ position right
+	+ pose "neutral"
+
+	"Ali" enters
+	+ position left
+	+ pose "neutral"
+
+	"Ali" says
+	+ Hi James, how are you?
+
+	"James" says
+	+ Oh, hey, Ali.  How’s it going?  I’m just waiting for the bus.
+	+ (Whispers) To be honest, Ali, I’m glad you’re here.  I’ve never seen this guy before and he’s creeping me out.
+
+	"Ali" says
+	+ (Whispers) Have you actually talked to him?  He’s pretty nice!  He’s having a bad day, but he even donated some food to someone who needed it.
+
+	"James" says
+	+ (Whispers) Oh really?  Hmm... guess I shouldn’t be so quick to judge someone.
+
+	"Ali" says
+	+ (Whispers) Good point!  Well I gotta get to class, I’ll see you later!
+
+	"Ali" exits
+	"James" exits
+
+	"Mr. Smith" enters
+	+ position right
+	+ pose "neutral"
+
+	"James" enters
+	+ position left
+	+ pose "neutral"
+
+	"James" says
+	+ Hi, my name is James.  It’s nice to meet you.
+
+	"Mr. Smith" says
+	+ Hi, James, I’m Mr. Smith.  It’s nice to meet you, too!
+
+	"Mr. Smith" exits
+	"James" exits
+
+	"..." says
+	+ 
+
+	go to "47"
+
+}
+
+"47" {
+
+	"Ali" enters
+	+ pose "neutral"
+	+ position left
+
+	"Sage" enters
+	+ pose "cat"
+	+ position right
+
+	"Sage" says
+	+ Well done, Ali.
+	+ You showed James a simple but powerful lesson - it’s better to get to know someone instead of quickly judging them.
+	+ Being an ally doesn’t have to be difficult.  It often comes down to getting to know people and supporting them, instead of judging or harming them.
+	+ Ali, let’s see who else we can help!
+
+	load scene "Scenes/End of Demo"
+
+}

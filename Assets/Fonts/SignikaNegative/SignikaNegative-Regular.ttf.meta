@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 71d171b5e43116e4dba91ef7f5a144c3
+timeCreated: 1508654583
+licenseType: Pro
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Signika Negative
+  fontNames:
+  - Signika Negative
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 431d0164153d52e489a1e1ae3f6575d7, type: 3}
+  - {fileID: 12800000, guid: 40602cb4eedc80e47a3c790a1363b327, type: 3}
+  - {fileID: 12800000, guid: 15360da8c2cb5f64686195c5f1620bfe, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
