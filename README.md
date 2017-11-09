@@ -1,5 +1,7 @@
 Entry for #allyjam . A story teaching what it means to be an Ally.  
 
+[Download game from GameJolt](https://gamejolt.com/games/ali-tale/292086)
+
 # CONTROLS
 * `Enter` key to go to next dialogue, or interact with character in overworld.  
 * Arrow keys to walk left/right in overworld.  
