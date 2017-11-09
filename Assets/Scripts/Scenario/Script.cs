@@ -230,7 +230,11 @@ public class Script : MonoBehaviour, ISceneLoadDependency
 
     string GetStreamingAssetsPath()
     {
+		#if UNITY_STANDALONE_WIN || UNITY_EDITOR
         return Application.dataPath + "/StreamingAssets/" + scriptResourcePath + ".txt";
+		#elif UNITY_STANDALONE_OSX
+		return Application.dataPath + "/Resources/Data/StreamingAssets/" + scriptResourcePath + ".txt";
+		#endif
     }
 
 	void HandleFullText(string text)
