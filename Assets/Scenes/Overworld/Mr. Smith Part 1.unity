@@ -779,7 +779,6 @@ GameObject:
   - component: {fileID: 650386712}
   - component: {fileID: 650386711}
   - component: {fileID: 650386709}
-  - component: {fileID: 650386713}
   m_Layer: 0
   m_Name: Overworld main boy
   m_TagString: Untagged
@@ -794,7 +793,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 650386706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83, y: -6.2200003, z: 2.69}
+  m_LocalPosition: {x: -21.52, y: -6.2200003, z: 7.16}
   m_LocalScale: {x: 3.2, y: 3.2, z: 3.2}
   m_Children:
   - {fileID: 435461180}
@@ -888,21 +887,6 @@ MonoBehaviour:
   endBoundRight: {fileID: 1436105274}
   alertIconMaterial: {fileID: 2100000, guid: f0319afeedac1492eb849c59973519db, type: 2}
   worryIconMaterial: {fileID: 2100000, guid: f151aee449818254ba8436b49c50e416, type: 2}
---- !u!114 &650386713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 650386706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c44f08b0db364e6d9d9c63269ef2df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1247533232}
-  sceneToLaunch: Scenes/Scenario
-  scenarioStartId: 40
-  expressionIcon: 1
 --- !u!1 &697376095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1148,7 @@ GameObject:
   - component: {fileID: 1165915206}
   - component: {fileID: 1165915205}
   - component: {fileID: 1165915208}
+  - component: {fileID: 1165915203}
   m_Layer: 0
   m_Name: Overworld Mr. Smith
   m_TagString: Untagged
@@ -1178,7 +1163,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1165915200}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.86, y: -6.2000003, z: 4.24}
+  m_LocalPosition: {x: -4.38, y: -6.2000003, z: 4.24}
   m_LocalScale: {x: 3.2, y: 3.2, z: 3.2}
   m_Children:
   - {fileID: 697376096}
@@ -1219,6 +1204,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1165915203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1165915200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c44f08b0db364e6d9d9c63269ef2df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1247533232}
+  sceneToLaunch: Scenes/Scenario
+  scenarioStartId: 60
+  expressionIcon: 2
 --- !u!33 &1165915204
 MeshFilter:
   m_ObjectHideFlags: 0

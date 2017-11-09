@@ -14,6 +14,7 @@ public class Script : MonoBehaviour, ISceneLoadDependency
 	public string scriptResourcePath;
     public bool loadFromWeb = true;
     public bool loadCachedFile = true;
+    public bool loadFromStreamingAssets = true;
 
 	string script;
 
@@ -58,9 +59,10 @@ public class Script : MonoBehaviour, ISceneLoadDependency
 
     // Multi-line Patterns
     // Character introduction patterns:
-    Regex rCharacterIntroduction = new Regex(@"^\s*""(.*?)""\s*enters\s*$", RegexOptions.IgnoreCase);
+    Regex rCharacterIntroduction = new Regex(@"^\s*""(.*?)""\s*enters\s*(\s+as\s*"".*?""){0,1}\s*$", RegexOptions.IgnoreCase);
     Regex rCharacterIntroduction_StartPose = new Regex(@"^\s*\+\s*pose\s*""(.*?)""\s*$", RegexOptions.IgnoreCase);
     Regex rCharacterIntroduction_Position = new Regex(@"^\s*\+\s*position\s+(left|right|center)\s*$", RegexOptions.IgnoreCase);
+    Regex rCharacterIntroduction_ExtractAlias = new Regex(@"^\s*as\s*""(.*?)""\s*$", RegexOptions.IgnoreCase);
 
     // Character speaking patterns:
     Regex rCharacterWillSpeak = new Regex(@"^\s*""(.*?)""\s*says\s*$", RegexOptions.IgnoreCase);
@@ -130,6 +132,13 @@ public class Script : MonoBehaviour, ISceneLoadDependency
 
 	IEnumerator LoadScript()
 	{
+        if (loadFromStreamingAssets)
+        {
+            script = ReadFromStreamingAssets();
+            Debug.Log("Script:: Loaded script from StreamingAssets.");
+            yield break;
+        }
+
 		string cachedScriptPath = GetCachedScriptPath();
 		Debug.LogFormat("Script:: Looking for script at path {0}.", cachedScriptPath);
 		bool useCachedFile = false;
@@ -207,10 +216,22 @@ public class Script : MonoBehaviour, ISceneLoadDependency
 		}
 	}
 
+    string ReadFromStreamingAssets()
+    {
+        var path = GetStreamingAssetsPath();
+        Debug.LogFormat("Script:: Attempting to load script from StreamingAssets path {0}", path);
+        return File.ReadAllText(path);
+    }
+
 	string GetCachedScriptPath()
 	{
 		return Application.persistentDataPath + Path.AltDirectorySeparatorChar + "CachedScript.dat";
 	}
+
+    string GetStreamingAssetsPath()
+    {
+        return Application.dataPath + "/StreamingAssets/" + scriptResourcePath + ".txt";
+    }
 
 	void HandleFullText(string text)
 	{
@@ -394,10 +415,10 @@ public class Script : MonoBehaviour, ISceneLoadDependency
         if (m.Success)
         {
             EaseOutCharacterConversationAction action = new EaseOutCharacterConversationAction();
-            action.characterName = m.Groups[1].Value;
+            action.characterAlias = m.Groups[1].Value;
             conversation.AddAction(action);
 
-            Debug_ParseResult(string.Format("Will remove character {0}.", action.characterName));
+            Debug_ParseResult(string.Format("Will remove character {0}.", action.characterAlias));
 
             return true;
         }
@@ -430,11 +451,35 @@ public class Script : MonoBehaviour, ISceneLoadDependency
         {
             characterIntroductionAction = new EaseInCharacterConversationAction();
             characterIntroductionAction.characterName = m.Groups[1].Value;
+            characterIntroductionAction.characterAlias = characterIntroductionAction.characterName;
+
+            if (m.Groups[2].Success)
+            {
+                Debug_ParseResult("Looks like character introduction is using alias, attempting to extract. (" + m.Groups[2] + ")");
+                Handle_CharacterIntroduction_ExtractAlias(m.Groups[2].Value);
+            }
+
             conversation.AddAction(characterIntroductionAction);
             SwitchState(ProcessingState.CharacterIntroduction);
             Debug_ParseResult(string.Format("{0} will be introduced", characterIntroductionAction.characterName));
 
             return true;
+        }
+        return false;
+    }
+
+    bool Handle_CharacterIntroduction_ExtractAlias(string line)
+    {
+        Match m = rCharacterIntroduction_ExtractAlias.Match(line);
+        if (m.Success)
+        {
+            characterIntroductionAction.characterAlias = m.Groups[1].Value;
+            Debug_ParseResult("Extracted alias as: (" + characterIntroductionAction.characterAlias + ")");
+            return true;
+        }
+        else
+        {
+            Debug.LogErrorFormat("Script:: Attempted to extract alias from {0}, but syntax was incorrect.", line);
         }
         return false;
     }

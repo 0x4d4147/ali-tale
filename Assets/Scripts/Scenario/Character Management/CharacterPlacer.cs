@@ -11,6 +11,7 @@ public class CharacterPlacer : MonoBehaviour
 		public CharacterImage charImage;
 		public string name;
 		public string alias;
+        public NameLabel nameLabel;
 	}
 
 	public int referencePixelWidth;
@@ -134,6 +135,13 @@ public class CharacterPlacer : MonoBehaviour
 
 	public void AddCharacter(string name, string pose, string alias)
 	{
+        if (usedCharacterTemplates.ContainsKey(alias))
+        {
+            Debug.LogWarningFormat("CharacterPlacer:: Script tries to add {0} with pose {1}, but {0} is already loaded. Consider using a change pose instead. Automatic resolution, loading only the pose.", alias, pose);
+            LoadPose(alias, pose);
+            return;
+        }
+
 		if (availableCharacterTemplates.Count > 0) {
 			var ch = availableCharacterTemplates.Pop();
 			ch.name = name;
@@ -343,6 +351,56 @@ public class CharacterPlacer : MonoBehaviour
         {
             Debug.LogWarningFormat("CharacterPlacer:: Did not find curve with name {0} in curve dictionary, defaulted to Linear curve.", curveName);
             return AnimationCurve.Linear(0f, 0f, 1f, 1f);
+        }
+    }
+
+    public void SetNameLabelForCharacter(string alias, CharacterPosition pos)
+    {
+        if (usedCharacterTemplates.ContainsKey(alias))
+        {
+            var ch = usedCharacterTemplates[alias];
+
+            switch (pos)
+            {
+                case CharacterPosition.Left:
+                    {
+                        ch.nameLabel = ScenarioCanvas.instance.GetLeftNameLabel();
+                        ch.nameLabel.SetName(alias);
+                        ch.nameLabel.SetVisible(true);
+                        break;
+                    }
+                case CharacterPosition.Right:
+                    {
+                        ch.nameLabel = ScenarioCanvas.instance.GetRightNameLabel();
+                        ch.nameLabel.SetName(alias);
+                        ch.nameLabel.SetVisible(true);
+                        break;
+                    }
+            }
+        }
+        else
+        {
+            Debug.LogWarningFormat("CharacterPlacer:: Could not set name label for {0}, key not in dictionary.", alias);
+        }
+    }
+
+    public void DisableNameLabelForCharacter(string alias)
+    {
+        if (usedCharacterTemplates.ContainsKey(alias))
+        {
+            var ch = usedCharacterTemplates[alias];
+            if (ch.nameLabel != null)
+            {
+                ch.nameLabel.Clear();
+            }
+            else
+            {
+                Debug.LogWarningFormat("CharacterPlacer:: Could not disable name label for {0}, no associated label to clear.", alias);
+            }
+        }
+        else
+        {
+            Debug.LogWarningFormat("CharacterPlacer:: Could not disable name label for {0}, key not in dictionary.", alias);
         }
     }
 

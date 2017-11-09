@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler
+public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler, IPointerExitHandler, IDeselectHandler
 {
     public MainMenuPanelManager panelManager;
 
@@ -18,5 +18,15 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, ISelectHandle
     public void OnSelect(BaseEventData eventData)
     {
         panelManager.OnFocusEnteredButton(this);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        hoverable.ShowNormal();
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        hoverable.ShowNormal();
     }
 }
