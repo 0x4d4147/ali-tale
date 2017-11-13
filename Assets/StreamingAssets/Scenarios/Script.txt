@@ -267,7 +267,7 @@
 	"Sage" says
 	+ Is that not normal?  Hmm... I know plenty of cats that talk...
 	+ I’m impressed with how well you handled the situation between Keith and Trevor.
-	+ Keith needed an ally, and you were there for him.  
+	+ Keith needed an ally, and you were there for him.
 	+ Do you know what I mean by "ally"?
 
 	options
@@ -280,8 +280,8 @@
 
 	"Sage" says
 	+ An ally is someone who speaks out on behalf of someone else or takes actions that are supportive of someone else.
-	+ In this case, your friend Keith needed support and you provided it to him.  
-	+ When someone is hurting someone else, you can get involved and tell them to stop.  
+	+ In this case, your friend Keith needed support and you provided it to him.
+	+ When someone is hurting someone else, you can get involved and tell them to stop.
 	+ There are lots of ways you can be an ally right here in City of Townsville.
 
 	go to "15"
@@ -477,7 +477,7 @@
 	+ I can be your friend, but only if you promise to stop being mean to people.
 
 	"Trevor" says
-	+ ...really?  I don’t deserve that.  
+	+ ...really?  I don’t deserve that.
 	+ I’ll think about it.
 	+ Thanks for talking with me.
 	+ I’m... gonna go.
@@ -531,8 +531,6 @@
 
 #Begin Mr. Smith Part 1
 
-
-
 # On overworld map, character walks past mainBoyCharacter
 # sweat drop appears over mainBoyCharacter
 
@@ -569,7 +567,7 @@
 
 	"James" poses "neutral"
 
-	"James" says  
+	"James" says
 	+ What's up?  Ready for our math test today?
 
 	options
@@ -591,7 +589,7 @@
 
 	"James" poses "neutral"
 
-	"James" says  
+	"James" says
 	+ What's up?  Ready for our math test today?
 
 	options
@@ -646,7 +644,7 @@
 "45" {
 
 	"Ali" says
-	+ It's the English paper that's due tomorrow that has me a little stressed.  
+	+ It's the English paper that's due tomorrow that has me a little stressed.
 
 	"James" poses "uncomfortable"
 
@@ -682,7 +680,7 @@
 	+ James, did you lose something?  Can I help?
 
 	"James" poses "shocked"
-	
+
 	"James" says
 	+ Ah, no, no, totally fine.  Look, I need to go. See you.
 
@@ -721,10 +719,10 @@
 
 	"Hypnotize_sound" music
 
-	"Sage" enters 
+	"Sage" enters
 	+ position right
 	+ pose "cat"
-	
+
 	"Sage" says
 	+ I am afraid I cannot let you continue to read James' mind.  Not now, at least.
 
@@ -761,7 +759,7 @@
 
 	"James" says
 	+ I didn't say anything about a paper.
-	
+
 	"James" poses "uncomfortable"
 
 	"James" says
@@ -782,7 +780,7 @@
 	+ The power I granted you is not an easy power to have.  It can be easy to forget what you have learned through mind reading or conversation.
 	+ Not everything is lost.  Come, I believe we can still help James.
 
-	load scene "Scenes/Overworld/Mr. Smith Part 1"
+	load scene "Scenes/Overworld/Mr. Smith Part 2"
 }
 
 
@@ -800,7 +798,7 @@
 	"James" says
 	+ Claire!?
 	+ I didn't say anything about Claire!  How did you...?!
-	
+
 	"James" poses "uncomfortable"
 
 	"James" says
@@ -822,7 +820,7 @@
 	+ The power I granted you is not an easy power to have.  It can be easy to forget what you have learned through mind reading or conversation.
 	+ Not everything is lost.  Come, I believe we can still help James.
 
-	load scene "Scenes/Overworld/Mr. Smith Part 1"
+	load scene "Scenes/Overworld/Mr. Smith Part 2"
 
 }
 
@@ -842,7 +840,7 @@
 	"Sage" enters
 	+ position right
 	+ pose "cat"
-	
+
 	"Ali" says
 	+ Sage, I wasn't able to help him!  And Claire is blackmailing him!
 
@@ -850,7 +848,7 @@
 	+ I do not believe there is anything you could have said in that moment that would have been helpful.
 	+ Not everything is lost.  Come, I believe we can still help James.
 
-	load scene "Scenes/Overworld/Mr. Smith Part 1"
+	load scene "Scenes/Overworld/Mr. Smith Part 2"
 
 }
 
@@ -858,7 +856,7 @@
 
 
 
-	
+
 # Ali is able to move
 # Mr. Smith Chibi is set to the far right, waiting for Ali Chibi to interact
 
@@ -884,7 +882,7 @@
 	+ How are you?  All ready for our math test later today?
 
 	"Ali" says
-	+ Hello, Mr. Smith... 
+	+ Hello, Mr. Smith...
 	+ Sure, I think so...
 
 	"Mr. Smith" says
@@ -907,12 +905,12 @@
 "61" {
 
 	"Ali" poses "uncomfortable"
-	
+
 	"Ali" says
 	+ ...
 
 	"Mr. Smith" says
-	+ Ali, we've been neighbors your entire life and I've had the opportunity to get to know you at school. 
+	+ Ali, we've been neighbors your entire life and I've had the opportunity to get to know you at school.
 	+ I can tell something is bothering you.
 	+ Please, you can trust me.  What is it?
 
@@ -952,7 +950,7 @@
 # tell full truth to Mr. Smith.  Sage talks.  End game.
 
 	"Ali" poses "uncomfortable"
-	
+
 	"Ali" says
 	+ I ran into James a little bit ago, and he was upset he lost a paper.
 	+ I wasn't supposed to, but I learned he's in trouble.
@@ -967,7 +965,7 @@
 	+ I see.
 
 	"Ali" says
-	+ And Claire is forcing James to write papers for her.  Everyone knows he's a great student. 
+	+ And Claire is forcing James to write papers for her.  Everyone knows he's a great student.
 	+ She knows something about James and is using it against him.
 
 	"Mr. Smith" says
@@ -1009,12 +1007,12 @@
 
 }
 
-"64" { 
+"64" {
 
 # say nothing.  Mr. Smith asks again.  options to say nothing again (66), don't want to betray trust (65), or full truth (63).
 
 	"Ali" poses "uncomfortable"
-	
+
 	"Ali" says
 	+ ...
 
@@ -1035,7 +1033,7 @@
 # explain you don't want to break trust.  options to say nothing (67 - need to remove betray trust option), or full truth (63).
 
 	"Ali" poses "uncomfortable"
-	
+
 	"Ali" says
 	+ I would tell you, but I don't want to break James' trust.  I'm not supposed to know.
 
@@ -1080,7 +1078,7 @@
 	"Sage" says
 	+ I'm glad you were able to tell Mr. Smith a little bit about what is going on with James.
 	+ However, I think you could have told him more about what you know.
-	+ Being an ally doesn't mean you have to do everything yourself, even though it usually feels like you do.  
+	+ Being an ally doesn't mean you have to do everything yourself, even though it usually feels like you do.
 	+ Telling a trusted adult about a difficult situation is another powerful way to be an ally, and what James needed in this moment.  I hope we have the opportunity in the future to further help James.
 	+ Now then, we need to get you to school before you're late!
 
@@ -1096,7 +1094,7 @@
 # say nothing.  Mr. Smith asks again.  options to say nothing again (66), or full truth (63).
 
 	"Ali" poses "uncomfortable"
-	
+
 	"Ali" says
 	+ ...
 
@@ -1110,4 +1108,3 @@
 	+ Claire is bullying James. => "63"
 
 }
-

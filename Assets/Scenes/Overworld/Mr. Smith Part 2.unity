@@ -203,7 +203,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14250
+  m_Name: pb_Mesh20448
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -562,7 +562,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 435461179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.049, y: 0.728, z: -0.113}
+  m_LocalPosition: {x: 0.172, y: 0.493, z: -0.157}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 650386707}
@@ -582,7 +582,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f0319afeedac1492eb849c59973519db, type: 2}
+  - {fileID: 2100000, guid: f151aee449818254ba8436b49c50e416, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -779,9 +779,8 @@ GameObject:
   - component: {fileID: 650386712}
   - component: {fileID: 650386711}
   - component: {fileID: 650386709}
-  - component: {fileID: 650386713}
   m_Layer: 0
-  m_Name: Overworld Bully
+  m_Name: Overworld main boy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -794,7 +793,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 650386706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -6.2200003, z: 2.69}
+  m_LocalPosition: {x: -21.52, y: -6.2200003, z: 7.16}
   m_LocalScale: {x: 3.2, y: 3.2, z: 3.2}
   m_Children:
   - {fileID: 435461180}
@@ -815,7 +814,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a159874496d3b244291eb5d4fcf83a9f, type: 2}
+  - {fileID: 2100000, guid: 1ccd647f4f193474ea7e8d83f7abd5ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -884,25 +883,10 @@ MonoBehaviour:
   rotateAngle: 15
   slerpBackTime: 0.5
   wobbleFrequency: 6
-  endBoundLeft: {fileID: 0}
-  endBoundRight: {fileID: 0}
+  endBoundLeft: {fileID: 1893068885}
+  endBoundRight: {fileID: 1436105274}
   alertIconMaterial: {fileID: 2100000, guid: f0319afeedac1492eb849c59973519db, type: 2}
-  worryIconMaterial: {fileID: 2100000, guid: f0319afeedac1492eb849c59973519db, type: 2}
---- !u!114 &650386713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 650386706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c44f08b0db364e6d9d9c63269ef2df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1247533232}
-  sceneToLaunch: Scenes/Scenario
-  scenarioStartId: 10
-  expressionIcon: 2
+  worryIconMaterial: {fileID: 2100000, guid: f151aee449818254ba8436b49c50e416, type: 2}
 --- !u!1 &697376095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,10 +1147,10 @@ GameObject:
   - component: {fileID: 1165915202}
   - component: {fileID: 1165915206}
   - component: {fileID: 1165915205}
-  - component: {fileID: 1165915207}
   - component: {fileID: 1165915208}
+  - component: {fileID: 1165915203}
   m_Layer: 0
-  m_Name: Overworld Keith
+  m_Name: Overworld Mr. Smith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1179,7 +1163,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1165915200}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.800001, y: -6.2000003, z: 0.5}
+  m_LocalPosition: {x: -4.38, y: -6.2000003, z: 4.24}
   m_LocalScale: {x: 3.2, y: 3.2, z: 3.2}
   m_Children:
   - {fileID: 697376096}
@@ -1200,7 +1184,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fd29ff9fb79f9db4ead7a2955e6494f6, type: 2}
+  - {fileID: 2100000, guid: 939c44d5cf79bd4469a67ba6d7d5487c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1220,6 +1204,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1165915203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1165915200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c44f08b0db364e6d9d9c63269ef2df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1247533232}
+  sceneToLaunch: Scenes/Scenario
+  scenarioStartId: 60
+  expressionIcon: 2
 --- !u!33 &1165915204
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1260,22 +1259,7 @@ MonoBehaviour:
   endBoundLeft: {fileID: 0}
   endBoundRight: {fileID: 0}
   alertIconMaterial: {fileID: 2100000, guid: f0319afeedac1492eb849c59973519db, type: 2}
-  worryIconMaterial: {fileID: 2100000, guid: f0319afeedac1492eb849c59973519db, type: 2}
---- !u!114 &1165915207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1165915200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5219375a0dd38054ab4cd675655b8e1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minDistance: 4.78
-  stopThreshold: 3.59
-  targetCharacter: {fileID: 1247533237}
-  debug: 1
+  worryIconMaterial: {fileID: 2100000, guid: f151aee449818254ba8436b49c50e416, type: 2}
 --- !u!65 &1165915208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1396,7 +1380,7 @@ MonoBehaviour:
   endBoundLeft: {fileID: 1893068885}
   endBoundRight: {fileID: 1436105274}
   alertIconMaterial: {fileID: 2100000, guid: f0319afeedac1492eb849c59973519db, type: 2}
-  worryIconMaterial: {fileID: 2100000, guid: f0319afeedac1492eb849c59973519db, type: 2}
+  worryIconMaterial: {fileID: 2100000, guid: f151aee449818254ba8436b49c50e416, type: 2}
   followCamera: {fileID: 1913487321}
 --- !u!65 &1247533238
 BoxCollider:
